@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kidpreneur - Young Minds, Big Ideas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" >
+    <nav class="nav">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-text">Kidpreneur</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="javascript:void(0)"  onclick="navigationFn('home')">Home</a></li>
+          <li><a href="javascript:void(0)"onclick="navigationFn('opportunities')" >Opportunities</a></li>
+          <li><a href="javascript:void(0)"  onclick="navigationFn('community')">Community</a></li>
+          <li><a href="javascript:void(0)"  onclick="navigationFn('event')">Events</a></li>
+          <li><a href="javascript:void(0)"  onclick="navigationFn('learning')">Learning Language</a></li>
+          <li><a href="javascript:void(0)"  onclick="navigationFn('about')">About Us</a></li>
+          <li><a href="javascript:void(0)" onclick="navigationFn('footer')" class="btn-contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <div class="hero-content">
+        <img src="./images/Group 8144.png"/>
+        <h1 class="hero-title">Kidpreneur – Young Minds, Big Ideas</h1>
+        <p class="hero-description">Empowering the next generation of entrepreneurs through creativity, innovation, and
+          hands-on learning experiences.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+      <div class="hero-images">
+        <img src="images/01.jpg" alt="Child entrepreneur" class="hero-img">
+        <img src="images/02.jpg" alt="Young innovator" class="hero-img">
+        <img src="images/03.jpg" alt="Creative kid" class="hero-img">
+        <img src="images/04.jpg" alt="Learning child" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section -->
+  <section class="showcase" id="opportunities">
+    <div class="slider-container">
+      <div class="slider-header">
+    Showcase of creative ideas
+      </div>
+    
+      <div class="slider-content">
+        <button class="slider-arrow prev" id="prevBtn">‹</button>
+        <button class="slider-arrow next" id="nextBtn">›</button>
+    
+        <div class="slider-track" id="sliderTrack">
+          <div class="product-card">
+            <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+            </div>
+ 
+            <div class="price-container">
+             
+              <div class="sale-price"><h3>Tech & Digital</h3></div>
+            </div>
+          </div>
+    
+        <div class="product-card">
+          <div class="product-image"><img src="images/eco.jpg" alt="Tech & Digital">
+          </div>
+        
+          <div class="price-container">
+        
+            <div class="sale-price">
+              <h3>Eco-Friendly & Sustainability</h3>
+            </div>
+          </div>
+        </div>
+      <div class="product-card">
+        <div class="product-image"><img src="images/school.jpg" alt="Tech & Digital">
+        </div>
+      
+        <div class="price-container">
+      
+          <div class="sale-price">
+            <h3>School & Learning Related</h3>
+          </div>
+        </div>
+      </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image"><img src="images/tech.jpg" alt="Tech & Digital">
+      </div>
+    
+      <div class="price-container">
+    
+        <div class="sale-price">
+          <h3>Tech & Digital</h3>
+        </div>
+      </div>
+    </div>
+        </div>
+    
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+
+  </section>
+  <section class="success-stories" id="community">
+    <div class="container">
+      <div class="success-content">
+        <div class="success-image">
+          <img src="images/boy_Large-removebg-preview-removebg-preview.png" alt="Successful young Ideas">
+        </div>
+        <div class="success-text">
+          <h2>Ideas Thats Win</h2>
+          <p>In a world flooded with ideas, only a few rise above the noise — these are the ideas that win.
+          
+          They don’t just sound good in theory. They work in the real world. They solve problems, create value, and move people to
+          take action.Winning ideas connect. They inspire, entertain, or empower — leaving a lasting impression.</p>
+          <button class="btn btn-primary">Read More</button>
+        </div>
+       
+      </div>
+    </div>
+  </section>  
+  <!-- Recently Added Ideas -->
+  <section class="recent-ideas" >
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recently added ideas</h2>
+        <button class="btn btn-primary">Donate to a Project that Inspires You</button>
+      </div>
+      <div class="ideas-grid">
+        <div class="idea-card">
+          <div class="idea-icon">🌱</div>
+          <div class="progress-container">
+            <div class="progress">
+              <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+            <div class="funding-text mt-2">70% funded</div>
+          </div>
+          <h3>Eco Bottle</h3>
+         
+          <p><strong>Problem Statement:</strong>Plastic waste and student productivity are two growing challenges that often go unnoticed in daily school life. Plastic waste by introducing reusable smart bottles.</p>
+       
+        </div>
+        <div class="idea-card">
+          <div class="idea-icon">💡</div>
+            <div class="progress-container">
+              <div class="progress">
+                <div class="progress-bar" style="width: 40%;"></div>
+              </div>
+              <div class="funding-text mt-2">40% funded</div>
+            </div>
+          <h3>Homework Helper</h3>
+   
+          <p><strong>Problem Statement:</strong>Many students struggle with staying focused, organized, and motivated while doing homework — especially at home.
+          Helps students organize assignments and reminders.</p>
+              
+        </div>
+        <div class="idea-card">
+          <div class="idea-icon">🎯</div>
+            <div class="progress-container">
+              <div class="progress">
+                <div class="progress-bar" style="width: 50%;"></div>
+              </div>
+              <div class="funding-text mt-2">50% funded</div>
+            </div>
+          <h3>Inspiration Section</h3>
+        
+          <p><strong>Problem Statement:</strong> Young entrepreneurs often struggle to believe that their ideas can become reality.Young entrepreneurs often struggle to
+          believe that their ideas can become reality.
+          Stories of Young Entrepreneurs</p>
+              
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="success-stories" id="community">
+    <div class="container">
+      <div class="success-content">
+        <div class="success-text">
+          <h2>Success Stories</h2>
+          <p>Meet our young entrepreneurs who have turned their creative ideas into successful ventures. Their stories
+          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
+          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
+          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
+          inspire and motivate other kids to pursue their entrepreneurial dreams.</p>
+          <button class="btn btn-primary">Read More</button>
+        </div>
+        <div class="success-image">
+          <img src="images/Group-1.jpg" alt="Successful young entrepreneur">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kidpreneur of the Month -->
+  <section class="kidpreneur-month" id="event">
+    <div class="container bg-img">
+      <h2 class="section-title">Kidpreneur Of The Month</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"At age 10, Alina launched Zolli Candy, creating sugar-free lollipops known as Zollipops, followed by Zolli Drops and
+            Zaffi Taffy."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/Rectangle_7.jpg" alt="Sarah Johnson">
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <span>Age 12, Eco-Entrepreneur</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Like well-made animations, Creta Class is well designed to cater to kids' feature. My son is 4 years old, and he is
+            immersed in its interesting and simple exercises."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="images/Rectangle_9.jpg" alt="Marcus Chen">
+            <div class="author-info">
+              <h4>Marcus Chen</h4>
+              <span>Age 14, Tech Innovator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blogs -->
+  <section class="latest-blogs" id="learning">
+    <div class="container">
+      <h2 class="section-title">Latest Blogs</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img src="images/Picture.jpg" alt="Blog post 1">
+          <div class="blog-content">
+            <h3>Entrepreneurship & Innovation</h3>
+            <p>Essential tips and strategies for young entrepreneurs...</p>
+            <button class="btn btn-primary" onclick="openModal('modal-3')">Read More</button>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="images/Image1.png" alt="Blog post 2">
+          <div class="blog-content">
+            <h3>STEM & Creativity</h3>
+            <p>Developing critical thinking skills through entrepreneurship...</p>
+            <button class="btn btn-primary" onclick="openModal('modal-2')">Read More</button>
+          </div>
+        </article>
+        <article class="blog-card">
+          <img src="images/Image3.png" alt="Blog post 3">
+          <div class="blog-content">
+            <h3>Life Skills for Young Leaders </h3>
+            <p>How entrepreneurship helps kids develop self-confidence...</p>
+            <button class="btn btn-primary" onclick="openModal('modal-1')">Read More</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+    <div id="modal-1" class="jw-modal">
+      <div class="jw-modal-body">
+        <h3>Life Skills for Young Leaders</h3>
+        <p>Whether speaking in front of a crowd or writing an email, communication is everything. Leaders listen well, speak
+        clearly, and know how to tailor their message.</p>
+        <p>Strong leaders don’t just follow — they think. Critical thinking helps young people evaluate information, weigh options,
+        and make smart choices.
+        Practice: Debates, case studies, ethical dilemmas.</p>
+        <p>Leadership starts from within. Young leaders need to know their values, strengths, and areas for growth.
+         Practice: Journaling, feedback sessions, personality assessments.</p>
+        <button onclick="closeModal()" class="cross">❌</button>
+      </div>
+    </div>
+
+
+    <!--2nd pop-->
+    <div id="modal-2" class="jw-modal">
+      <div class="jw-modal-body">
+        <h3>STEM & Creativity</h3>
+        <p>When you think of STEM — science, technology, engineering, and math — you might imagine formulas, codes, and lab
+        reports. But here’s the truth:</p>
+        <p>Problem Solving Needs Innovation
+        Every great invention started with a question and a spark of imagination. Creativity helps students approach problems
+        from unique angles. Tomorrow’s careers will require both coding and creative thinking, engineering and empathy, data and design.</p>
+       <ul style="padding: 30px; color: #666;">
+        <li>Project-Based Learning
+        Let students design their own inventions, apps, or scientific experiments — and present them creatively.
+      
+        </li>
+      <li>Arts Integration (STEAM)
+      Adding the "A" for Arts turns STEM into STEAM, reminding us that design, storytelling, and visual thinking enhance
+      technical work.</li> 
+      <li>Makerspaces & Innovation Labs
+      Hands-on environments where students tinker, build, prototype, and create with tech and tools.</li>
+      </ul>
+        <button onclick="closeModal()" class="cross">❌</button>
+      </div>
+    </div>
+
+    <!-- 3rd Modal-->
+    <div id="modal-3" class="jw-modal">
+      <div class="jw-modal-body">
+        <h3>Entrepreneurship & Innovation</h3>
+        <p>Life Skills for Young Leaders: Building the Future, One Skill at a Time
+        
+        Leadership isn’t just about titles or managing teams — it’s about influence, character, and the ability to navigate life
+        with purpose and impact.
+        
+        For young leaders stepping into the spotlight, developing key life skills early on is the foundation for long-term
+        success.</p>
+        <p> Understanding your emotions and those of others is key to empathy, conflict resolution, and team dynamics.</p>
+        <button onclick="closeModal()" class="cross">❌</button>
+      </div>
+    </div>
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">
+            <img src="images/Frame 8972.png" alt="Parent testimonial">
+          </div>
+          <div class="testimonial-text">
+            <p>The most valuable thing I learned was perseverance. Classroom learning never taught me to overcome obstacles like this.
+            It truly built my mental toughness."</p>
+            <h4>Jennifer Smith</h4>
+            <span>Parent</span>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">
+            <img src="images/Rectangle 268.png" alt="Teacher testimonial">
+          </div>
+          <div class="testimonial-text">
+            <p>"This program helped my students understand how to start and run a business in a fun, real-world way. They developed
+            financial literacy and creativity. It was incredibly engaging."</p>
+            <h4>Mr. David Wilson</h4>
+            <span>Teacher</span>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <div class="testimonial-avatar">
+            <img src="images/Rectangle 268-1.png" alt="Mentor testimonial">
+          </div>
+          <div class="testimonial-text">
+            <p>"Through this program, I’ve become more confident in pitching my ideas. I now understand there are no limits to what I
+            can achieve."</p>
+            <h4>Lisa Rodriguez</h4>
+            <span>Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="upcoming-events">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-icon">📅</div>
+          <h3>Entrepreneurship Workshop</h3>
+          <p>March 15, 2024</p>
+        </div>
+        <div class="event-card">
+          <div class="event-icon">🏆</div>
+          <h3>Young Innovator Awards</h3>
+          <p>April 20, 2024</p>
+        </div>
+        <div class="event-card">
+          <div class="event-icon">🎯</div>
+          <h3>Pitch Competition</h3>
+          <p>May 10, 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-text">
+          <h2>Our Mission</h2>
+          <p>To empower young minds with entrepreneurial skills and creative thinking that will shape the future of
+            business and innovation.</p>
+        </div>
+        <div class="mission-image">
+          <img src="images/kid 1.jpg" alt="Kids learning together">
+        </div>
+      </div>
+      <div class="vision-content">
+        <div class="vision-image">
+          <img src="images/camp-1 1.png" alt="Kids collaborating">
+        </div>
+        <div class="vision-text">
+          <h2>Our Vision</h2>
+          <p>A world where every child has the opportunity to explore their entrepreneurial potential and create
+            positive change in their communities.</p>
+        </div>
+      </div>
+      <div class="platform-description">
+        <h2>A Platform for students to showcase creative startup ideas and inspire the world</h2>
+        <button class="btn btn-primary">Join Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team -->
+  <section class="our-team" id="about">
+    <div class="container">
+      <h2 class="section-title">Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="images/Ellipse 44.png" alt="Team Member 1">
+          <h3>Alex Johnson</h3>
+          <p>Founder & CEO</p>
+        </div>
+        <div class="team-member">
+          <img src="images/Ellipse 45.png" alt="Team Member 2">
+          <h3>Sarah Davis</h3>
+          <p>Education Director</p>
+        </div>
+        <div class="team-member">
+          <img src="images/Ellipse 46.png" alt="Team Member 3">
+          <h3>Mike Chen</h3>
+          <p>Program Manager</p>
+        </div>
+        <div class="team-member">
+          <img src="images/Ellipse 47.png" alt="Team Member 4">
+          <h3>Emma Wilson</h3>
+          <p>Community Lead</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+  <div class="contact-content">
+    <div class="contact-text">
+      <h2>Have an idea? Share it With Us!</h2>
+      <p>We'd love to hear from young entrepreneurs and their innovative ideas. Get in touch with us today!</p>
+      <div class="contact-info">
+        <div class="contact-item">
+        
+          <span>📨 harpreetsood1980@gmail.com</span>
+        </div>
+        <div class="contact-item">
+
+          <span> ☎️ +91 7658055330</span>
+        </div>
+        <div class="contact-item">
+  
+          <span> 🏠 Tarn-Taran Punjab(143401)</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <form id="contactForm">
+        <p>Your Name</p>
+        <input type="Name" placeholder=" Enter Your Full Name " name="name" required="">
+  
+        <p>Your Age</p>
+        <input type="Age" placeholder="Enter Your Age" name="age" required="">
+        <p>Your Email</p>
+        <input type="email" placeholder="Enter Your Email" name="email" required="">
+        <p>Your Contact</p>
+        <input type="contact" placeholder="Enter Your Contact" name="contact" required="">
+        <p>Idea Title</p>
+        <input type="Title" placeholder="Enter Your Idea title" name="title" required="">
+        <p>Description</p>
+        <textarea placeholder="Tell us about your idea" rows="4" name="description" required=""></textarea>
+        <input type="File" placeholder="Upload Your File" name="upload" required="">
+   
+        <button type="submit" class="btn btn-primary">Send Idea</button>
+      </form>
+    </div>
+  </div>
+      
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay up to date with our story</h2>
+        <p>Get the latest updates on events, success stories, and opportunities for young entrepreneurs.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter your email">
+          <button class="btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-text"><img src="./images/Group 8144.png" alt="" /></span>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#team">Our Team</a></li>
+              <li><a href="#careers">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Programs</h4>
+            <ul>
+              <li><a href="#workshops">Workshops</a></li>
+              <li><a href="#mentorship">Mentorship</a></li>
+              <li><a href="#events">Events</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#guides">Guides</a></li>
+              <li><a href="#support">Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Kidpreneur. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="./js/script.js"> </script>
+  
+</body>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDgWnPxVZRJxP5Lkal9VSHM9CYrMiuhff0",
+    authDomain: "kd-school-a638a.firebaseapp.com",
+    projectId: "kd-school-a638a",
+    storageBucket: "kd-school-a638a.firebasestorage.app",
+    messagingSenderId: "450814111713",
+    appId: "1:450814111713:web:ff1b42a13612ff1495eca0",
+    measurementId: "G-8V9686R5ZE"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = firebase.firestore();
+     document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        db.collection("contacts").add({
+          name: name,
+          age:age,
+          email: email,
+          message: message,
+          contact:contact,
+          title:title,
+          description: description,
+          upload: upload,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+          .then(() => {
+            alert("Message sent!");
+            document.getElementById('contactForm').reset();
+          })
+          .catch((error) => {
+            alert("Error: " + error.message);
+          });
+      });
+      
+</script>
+
+</html>
