@@ -39,8 +39,8 @@ function closeModal() {
     this.products = document.querySelectorAll('.product-card');
 
     this.currentIndex = 0;
-    this.cardWidth = 320; // 300px card + 20px gap
-    this.visibleCards = 4; // Show 4 cards at 1400px width
+    this.cardWidth = 400; // 300px card + 20px gap
+    this.visibleCards = 3; // Show 4 cards at 1400px width
     this.maxIndex = Math.max(0, this.products.length - this.visibleCards);
 
     this.init();
