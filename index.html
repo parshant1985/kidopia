@@ -39,8 +39,7 @@
       <div class="hero-content">
         <img src="./images/Group 8144.png"/>
         <h1 class="hero-title">Kidpreneur – Young Minds, Big Ideas</h1>
-        <p class="hero-description">Empowering the next generation of entrepreneurs through creativity, innovation, and
-          hands-on learning experiences.</p>
+        <p class="hero-description">A platform for students to showcase creative startup ideas and inspire the world.</p>
         <div class="hero-buttons">
           <button class="btn btn-primary">Get Started</button>
           <button class="btn btn-secondary">Learn More</button>
@@ -113,7 +112,6 @@
     <div class="product-card">
       <div class="product-image"><img src="images/school.jpg" alt="Tech & Digital">
       </div>
-    
       <div class="price-container">
     
         <div class="sale-price">
@@ -235,9 +233,7 @@
             </div>
           <h3>Inspiration Section</h3>
         
-          <p><strong>Problem Statement:</strong> Young entrepreneurs often struggle to believe that their ideas can become reality.Young entrepreneurs often struggle to
-          believe that their ideas can become reality.
-          Stories of Young Entrepreneurs</p>
+          <p><strong>Problem Statement:</strong> Plastic waste and student productivity are two growing challenges that often go unnoticed in daily school life.</p>
               
         </div>
       </div>
@@ -250,11 +246,10 @@
       <div class="success-content">
         <div class="success-text">
           <h2>Success Stories</h2>
-          <p>Meet our young entrepreneurs who have turned their creative ideas into successful ventures. Their stories
-          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
-          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
-          inspire and motivate other kids to pursue their entrepreneurial dreamwho have turned their creative ideas into successful ventures. Their stories
-          inspire and motivate other kids to pursue their entrepreneurial dreams.</p>
+          <p>These real-life journeys showcase how individuals and teams turned challenges into opportunities and achieved remarkable
+          outcomes. From overcoming obstacles to reaching breakthrough milestones, these stories serve as a powerful reminder that
+          with the right mindset and effort, success is always within reach. Let their achievements motivate and energize you for
+          what’s possible.</p>
           <button class="btn btn-primary">Read More</button>
         </div>
         <div class="success-image">
@@ -271,8 +266,7 @@
       <div class="testimonial-grid">
         <div class="testimonial-card">
           <div class="testimonial-content">
-            <p>"At age 10, Alina launched Zolli Candy, creating sugar-free lollipops known as Zollipops, followed by Zolli Drops and
-            Zaffi Taffy."</p>
+            <p>These real-life journeys showcase how individuals and teams turned challenges into opportunities and achieved remarkable outcomes. From overcoming obstacles to reaching breakthrough milestones.</p>
           </div>
           <div class="testimonial-author">
             <img src="images/Rectangle_7.jpg" alt="Sarah Johnson">
@@ -545,15 +539,17 @@
           </div>
         
           <div class="table-container">
+          
+              <div class="video-container" id="vid"></div>
             <table id="contactsTable">
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Phone</th>
+                  <th>funds</th>
                   <th>Title</th>
                   <th>Message</th>
-                  <th>Date</th>
+                  <th>video</th>
                   <th>Age</th>
                   <th>Actions</th>
                 </tr>
@@ -586,6 +582,8 @@
         <input type="contact" placeholder="Enter Your Contact" name="contact" required="">
         <p>Idea Title</p>
         <input type="Title" placeholder="Enter Your Idea title" name="title" required="">
+        <p>Video</p>
+        <input type="video" placeholder="Enter Your Idea URL" name="URL" required="">
         <p>Description</p>
         <textarea placeholder="Tell us about your idea" rows="4" name="description" required=""></textarea>
    
@@ -657,7 +655,7 @@
   <script type="module">
     // Import Firebase modules
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-    import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, serverTimestamp, orderBy, query } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    import { getFirestore, collection, addDoc, getDocs, deleteDoc, updateDoc, doc, serverTimestamp, orderBy, query } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
     // Firebase configuration
     // IMPORTANT: Replace these with your actual Firebase config
@@ -697,12 +695,18 @@
       try {
         // Get form data
         const formData = new FormData(form);
+        const url = formData.get('URL');
+        const urlObj = new URL(url);
+        const videoId = urlObj.searchParams.get("v");
+       
         const data = {
           name: formData.get('name'),
           age: formData.get('age'),
           email: formData.get('email'),
           contact: formData.get('contact') || '',
           title: formData.get('title'),
+          video: videoId,
+          funds:0,
           description: formData.get('description'),
           timestamp: serverTimestamp(),
           status: 'new'
@@ -769,21 +773,33 @@
         formattedDate = data.timestamp.toDate().toLocaleDateString() + ' ' +
           data.timestamp.toDate().toLocaleTimeString();
       }
-
       row.innerHTML = `
                   <td>${data.name} </td>
                   <td>${data.email}</td>
-                  <td>${data.contact || 'N/A'}</td>
+                  <td> <span class="phone-display" id="phone-display-${docId}">${data.funds || 'No funds'}</span>
+                    <input type="tel" class="phone-edit" id="phone-edit-${docId}" value="${data.funds || ''}" style="display: none;"></td>
            
                   <td>${data.title}</td>
                   <td class="message-cell">${data.description}</td>
-                  <td>${formattedDate}</td>
+                  <td> <button class="edit-btn" onclick="showVideo('${data.video}')" id="video-btn-${data.video}" style='background:green'>
+                       video 📀
+                    </button></td>
                      <td>${data.age}</td>
                   <td>
-                      <button class="delete-btn" onclick="deleteContact('${docId}')">
-                          Delete
-                      </button>
+                          <button class="edit-btn" onclick="editPhone('${docId}')" id="edit-btn-${docId}">
+                        Edit
+                    </button>
+                    <button class="update-btn" onclick="updatePhone('${docId}')" id="update-btn-${docId}" style="display: none;">
+                        Update
+                    </button>
+                    <button class="cancel-btn" onclick="cancelEdit('${docId}')" id="cancel-btn-${docId}" style="display: none;">
+                        Cancel
+                    </button>
+                    <button  onclick="deleteContact('${docId}')">
+                        ❌
+                    </button>
                   </td>
+                
               `;
 
       contactsTableBody.appendChild(row);
@@ -818,7 +834,92 @@
         deleteBtn.innerHTML = 'Delete';
       }
     };
+      // Edit phone number
+      window.showVideo = function (videoID) {
+  const vid = document.getElementById('vid');
+  vid.style.display='block';
+  vid.innerHTML =`<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>`
+      }
 
+      window.editPhone = function (docId) {
+        const phoneDisplay = document.getElementById(`phone-display-${docId}`);
+        const phoneEdit = document.getElementById(`phone-edit-${docId}`);
+        const editBtn = document.getElementById(`edit-btn-${docId}`);
+        const updateBtn = document.getElementById(`update-btn-${docId}`);
+        const cancelBtn = document.getElementById(`cancel-btn-${docId}`);
+
+        // Hide display, show edit input
+        phoneDisplay.style.display = 'none';
+        phoneEdit.style.display = 'block';
+        phoneEdit.focus();
+
+        // Hide edit button, show update/cancel buttons
+        editBtn.style.display = 'none';
+        updateBtn.style.display = 'inline-block';
+        cancelBtn.style.display = 'inline-block';
+      };
+
+      // Update phone number in Firestore
+      window.updatePhone = async function (docId) {
+        const phoneEdit = document.getElementById(`phone-edit-${docId}`);
+        const newPhone = phoneEdit.value.trim();
+
+        try {
+          // Show loading state
+          const updateBtn = document.getElementById(`update-btn-${docId}`);
+          updateBtn.disabled = true;
+          updateBtn.innerHTML = '<span class="loading"></span>';
+
+          // Update document in Firestore
+          await updateDoc(doc(db, 'contacts', docId), {
+            funds: newPhone
+          });
+
+          // Update the display
+          const phoneDisplay = document.getElementById(`phone-display-${docId}`);
+          phoneDisplay.textContent = newPhone || 'N/A';
+
+          // Reset UI
+          cancelEdit(docId);
+
+          showMessage('success', ' updated successfully.');
+
+        } catch (error) {
+          console.error('Error updating phone number: ', error);
+          showMessage('error', 'Error updating phone number. Please try again.');
+
+          // Reset button state on error
+          const updateBtn = document.getElementById(`update-btn-${docId}`);
+          updateBtn.disabled = false;
+          updateBtn.innerHTML = 'Update';
+        }
+      };
+
+      // Cancel edit mode
+      window.cancelEdit = function (docId) {
+        const phoneDisplay = document.getElementById(`phone-display-${docId}`);
+        const phoneEdit = document.getElementById(`phone-edit-${docId}`);
+        const editBtn = document.getElementById(`edit-btn-${docId}`);
+        const updateBtn = document.getElementById(`update-btn-${docId}`);
+        const cancelBtn = document.getElementById(`cancel-btn-${docId}`);
+
+        // Show display, hide edit input
+        phoneDisplay.style.display = 'block';
+        phoneEdit.style.display = 'none';
+
+        // Show edit button, hide update/cancel buttons
+        editBtn.style.display = 'inline-block';
+        updateBtn.style.display = 'none';
+        cancelBtn.style.display = 'none';
+
+        // Reset button state
+        updateBtn.disabled = false;
+        updateBtn.innerHTML = 'Update';
+      };
     // Refresh button handler
     refreshBtn.addEventListener('click', loadContacts);
 
