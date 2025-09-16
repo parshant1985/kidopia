@@ -125,7 +125,7 @@
     <td>${data.email}</td>
     <td> <span class="phone-display" id="phone-display-${docId}">${data.funds || 'No funds'
 } </span>
-        <input type="number" class="phone-edit" id="phone-edit-${docId}" value="${data.funds || ''}" style="display: none;"></td>
+        <input type="number" class="phone-edit" id="phone-edit-${docId}" value="${data.funds || ''}" style="display: none;"> </td>
 
     <td>${data.title}</td>
     <td class="message-cell">${data.description}</td>
@@ -143,9 +143,9 @@
         <button class="cancel-btn" onclick="cancelEdit('${docId}')" id="cancel-btn-${docId}" style="display: none;">
             Cancel
         </button>
-        <button onclick="deleteContact('${docId}')">
+        <span onclick="deleteContact('${docId}')" style='cursor: pointer;'>
             ❌
-        </button>
+        </span>
     </td>
 
     `;

@@ -875,12 +875,12 @@ html {
     display: block;
    
 }
-
+td input { font-size: 12px; padding: 5px;}
 .jw-modal-body {
     padding: 20px;
     background: #fbf9d4;
     position: relative;
-     width: 90%;
+     width: 96%;
     margin: 0 auto;
     border: 5px solid #080808;
 }
