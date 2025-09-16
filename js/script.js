@@ -25,6 +25,7 @@ function openModal(id) {
 
 // close currently open modal
 function closeModal() {
+    document.getElementById('vid').style.display = 'none';
     document.querySelector('.jw-modal.open').classList.remove('open');
     document.body.classList.remove('jw-modal-open');
 }  

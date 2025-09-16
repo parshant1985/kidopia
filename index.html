@@ -22,10 +22,11 @@
         </div>
         <ul class="nav-menu">
           <li><a href="javascript:void(0)"  onclick="navigationFn('home')">Home</a></li>
-          <li><a href="javascript:void(0)"onclick="navigationFn('opportunities')" >Opportunities</a></li>
+          <li><a href="javascript:void(0)"onclick="navigationFn('opportunities')" >Creative ideas</a></li>
           <li><a href="javascript:void(0)"  onclick="navigationFn('community')">Community</a></li>
-          <li><a href="javascript:void(0)"  onclick="navigationFn('event')">Events</a></li>
-          <li><a href="javascript:void(0)"  onclick="navigationFn('learning')">Learning Language</a></li>
+            <li><a href="javascript:void(0)" onclick="navigationFn('learning')">Latest Blog</a></li>
+             <li><a href="javascript:void(0)" onclick="navigationFn('event')">Events</a></li>
+
           <li><a href="javascript:void(0)"  onclick="navigationFn('about')">About Us</a></li>
           <li><a href="javascript:void(0)" onclick="navigationFn('footer')" class="btn-contact">Contact Us</a></li>
         </ul>
@@ -260,7 +261,7 @@
   </section>
 
   <!-- Kidpreneur of the Month -->
-  <section class="kidpreneur-month" id="event">
+  <section class="kidpreneur-month" >
     <div class="container bg-img">
       <h2 class="section-title">Kidpreneur Of The Month</h2>
       <div class="testimonial-grid">
@@ -422,7 +423,7 @@
   </section>
 
   <!-- Upcoming Events -->
-  <section class="upcoming-events">
+  <section class="upcoming-events" id="event">
     <div class="container">
       <h2 class="section-title">Upcoming Events</h2>
       <div class="events-grid">
@@ -451,8 +452,8 @@
       <div class="mission-content">
         <div class="mission-text">
           <h2>Our Mission</h2>
-          <p>To empower young minds with entrepreneurial skills and creative thinking that will shape the future of
-            business and innovation.</p>
+          <p>To inspire and empower children with creativity, innovation, and entrepreneurial skills, helping them turn ideas into
+          impactful projects that make a difference.</p>
         </div>
         <div class="mission-image">
           <img src="images/kid 1.jpg" alt="Kids learning together">
@@ -464,13 +465,20 @@
         </div>
         <div class="vision-text">
           <h2>Our Vision</h2>
-          <p>A world where every child has the opportunity to explore their entrepreneurial potential and create
-            positive change in their communities.</p>
+          <p>To build a generation of young leaders and problem-solvers who confidently shape the future through innovation,
+          collaboration, and lifelong learning.</p>
         </div>
       </div>
       <div class="platform-description">
-        <h2>A Platform for students to showcase creative startup ideas and inspire the world</h2>
-        <button class="btn btn-primary">Join Now</button>
+        <h2>A Platform for students to showcase
+        creative startup ideas and inspire the world</h2>
+        <p>Fund a Kid. Fuel a Dream.
+        At Kidpreneur, we believe kids aren't just the leaders of tomorrow — they're the changemakers of today. From
+        eco-friendly products to handmade crafts and tech solutions, young entrepreneurs are turning creative ideas into
+        real-world businesses.
+        But even the brightest ideas need a little boost.
+        That’s where you come in.</p>
+        <button class="btn btn-primary">Fund a kid</button>
       </div>
     </div>
   </section>
@@ -568,7 +576,7 @@
 
      
     </div>
-    <div class="contact-form">
+    <div class="contact-form" id="footer">
       <form id="contactForm"  action="https://formspree.io/f/mpwjnodr"
   method="POST">
         <p>Your Name</p>
@@ -610,7 +618,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer" id="footer">
+  <footer class="footer" >
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
@@ -724,7 +732,7 @@
         // Refresh the table to show new data
         loadContacts();
 
-        console.log('Document written with ID: ', docRef.id);
+        //console.log('Document written with ID: ', docRef.id);
 
       } catch (error) {
         console.error('Error adding document: ', error);
@@ -748,6 +756,7 @@
         const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
+          document.getElementById('vid').style.display = 'none';
           noDataMessage.style.display = 'block';
         } else {
           querySnapshot.forEach((doc) => {
@@ -781,7 +790,7 @@
            
                   <td>${data.title}</td>
                   <td class="message-cell">${data.description}</td>
-                  <td> <button class="edit-btn" onclick="showVideo('${data.video}')" id="video-btn-${data.video}" style='background:green'>
+                  <td> <button class="edit-btn" onclick="showVideo('${data.video}', '${data.name}', '${data.description}', '${data.title}')" id="video-btn-${data.video}" style='background:green; font-size:16px'>
                        video 📀
                     </button></td>
                      <td>${data.age}</td>
@@ -835,14 +844,22 @@
       }
     };
       // Edit phone number
-      window.showVideo = function (videoID) {
+      window.showVideo = function (videoID,name, description,title ) {
   const vid = document.getElementById('vid');
   vid.style.display='block';
   vid.innerHTML =`<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
-        </iframe>`
+        </iframe>
+        <div style='float:right; width:45%; padding:10px'>
+          <h3>Name:<span style="color:green"> ${name}</span></h3>
+          <h4>Title: <span style="color:green">${title}</span></h4>
+          <h4> Description:<span style="color:green"> ${description}</span></h4>
+         
+          </div>
+         
+        `
       }
 
       window.editPhone = function (docId) {
