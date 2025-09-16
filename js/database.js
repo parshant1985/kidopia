@@ -123,7 +123,7 @@
     row.innerHTML = `
     <td>${data.name} </td>
     <td>${data.email}</td>
-    <td> <span class="phone-display" id="phone-display-${docId}">${data.funds || 'No funds'}</span>
+    <td> <span class="phone-display" id="phone-display-${docId}">${data.funds + ' ₹'|| 'No funds'}</span>
         <input type="tel" class="phone-edit" id="phone-edit-${docId}" value="${data.funds || ''}" style="display: none;"></td>
 
     <td>${data.title}</td>
