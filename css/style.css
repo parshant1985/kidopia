@@ -266,6 +266,7 @@ img {
     border-radius: 8px;
 }
 
+
 /* Form Elements */
 input, textarea {
     width: 100%;
@@ -319,7 +320,7 @@ input:focus, textarea:focus {
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -393,6 +394,11 @@ input:focus, textarea:focus {
     gap: 2rem;
     justify-content: center;
 }
+.campaign-grid{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
 
 .blog-grid {
     display: flex;
@@ -447,6 +453,55 @@ input:focus, textarea:focus {
     flex: 1;
 }
 
+.campaign-section {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 1200px;
+    margin: 0 auto;
+    /* Full width */
+    padding: 40px 20px;
+    
+    box-sizing: border-box;
+}
+
+.campaign-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.campaign-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.campaign-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.campaign-text .btn {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.campaign-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.campaign-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
 /* Mission Vision Layout */
 .mission-content, .vision-content {
     display: flex;
